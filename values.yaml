@@ -1,0 +1,20 @@
+---
+postgresql:
+  postgresqlPassword:
+      valueFrom:
+        secretKeyRef:
+          name: nautobot-db
+          key: postgres
+redis:
+  auth:
+    valueFrom:
+        secretKeyRef:
+          name: nautobot-db
+          key: redis
+nautobot:
+  image:
+    registry: "ghcr.io"
+    repository: "networktocode/nautobot-kubernetes"
+    tag: "main"
+    pullSecrets:
+      - "ghcr.io"
