@@ -11,6 +11,8 @@ redis:
         secretKeyRef:
           name: nautobot-db
           key: redis
+celeryWorker:
+  replicaCount: 4
 nautobot:
   image:
     registry: localhost:5000
