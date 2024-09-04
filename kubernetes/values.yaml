@@ -1,27 +1,20 @@
 ---
-apiVersion: v1
-metadata:
-  name: nautobot
-  namespace: nautobot
-kind: ConfigMap
-data:
-  values: |
-    postgresql:
-      postgresqlPassword:
-        valueFrom:
-          secretKeyRef:
-            name: nautobot-db
-            key: postgres
-    redis:
-      auth:
-        valueFrom:
-            secretKeyRef:
-              name: nautobot-db
-              key: redis
-    nautobot:
-      image:
-        registry: localhost:5000
-        repository: nautobot
-        tag: main
-        pullSecrets:
-          - ghcr.io
+postgresql:
+  postgresqlPassword:
+    valueFrom:
+      secretKeyRef:
+        name: nautobot-db
+        key: postgres
+redis:
+  auth:
+    valueFrom:
+        secretKeyRef:
+          name: nautobot-db
+          key: redis
+nautobot:
+  image:
+    registry: localhost:5000
+    repository: nautobot
+    tag: main
+    pullSecrets:
+      - ghcr.io

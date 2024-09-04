@@ -6,3 +6,11 @@ namespace: nautobot
 resources:
   - namespace.yaml
   - nautobot-helmrepo.yaml
+
+generatorOptions:
+  disableNameSuffixHash: true
+
+configMapGenerator:
+  - name: "nautobot-values"
+    files:
+      - "values=values.yaml"
