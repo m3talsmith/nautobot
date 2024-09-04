@@ -1,0 +1,2 @@
+nautobot_plugin_nornir==1.0.0
+nautobot-golden-config==1.2.0
