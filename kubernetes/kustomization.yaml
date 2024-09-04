@@ -5,3 +5,4 @@ namespace: nautobot
 
 resources:
   - namespace.yaml
+  - nautobot-helmrepo.yaml
